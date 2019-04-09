@@ -32,5 +32,5 @@ as
 go
 
 -- test
-select HumanResources.employee.FinesFN(3);
+select employee.FinesFN(3);
 go
