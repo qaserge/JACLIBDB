@@ -30,3 +30,7 @@ as
     return @FineOwed
   end;
 go
+
+-- test
+select HumanResources.employee.FinesFN(3);
+go
