@@ -34,3 +34,33 @@ SELECT MAX(CM.C) as 'greatest number of books borrowed by any one individual'
   group by MemberID) as CM
   ;
   go
+
+/* 5. What percentage of all loans eventually becomes overdue?  */
+  create procedure PercentLoanOverduePR
+as
+select 
+
+CAST( (count( distinct LH.ItemID) * 100) / (count(L.TitleID)) AS NUMERIC(10, 2) )/(count(L.TitleID))*4 as 'Percentage %'
+from employee.LoanHistory as LH
+left outer join employee.Loans as L
+on LH.ItemID=L.ItemID;
+go
+exec PercentLoanOverduePR;
+go
+
+SELECT *
+FROM employee.Loans
+WHERE Loans.DueDate > Loans.OutDate;
+go
+
+/* 7. What are the library peak hours for loans? */
+create procedure PeakPR
+as
+SELECT distinct datepart(hour, Loans.OutDate) as [Peak Hours] , count(*) as [Count]
+FROM employee.Loans 
+GROUP BY datepart(hour, Loans.OutDate)
+Order by count(*) desc;
+go
+
+exec PeakPR;
+go
