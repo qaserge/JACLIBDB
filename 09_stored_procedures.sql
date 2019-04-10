@@ -35,7 +35,7 @@ SELECT MAX(CM.C) as 'greatest number of books borrowed by any one individual'
   ;
   go
 
-/* 5. What percentage of all loans eventually becomes overdue?  */
+  -- 5. What percentage of all loans eventually becomes overdue? 
   create procedure PercentLoanOverduePR
 as
 select 
@@ -48,9 +48,26 @@ go
 exec PercentLoanOverduePR;
 go
 
+-- 5. What percentage of all loans eventually becomes overdue? 
+
 SELECT *
 FROM employee.Loans
 WHERE Loans.DueDate > Loans.OutDate;
+go
+
+create procedure PercentLoanOverduePR2
+as
+SELECT COUNT(*) * 100.0 / (SELECT COUNT(*) FROM employee.Loans)
+FROM employee.Loans
+WHERE Loans.DueDate < Loans.ReturnedDate;
+go
+
+exec PercentLoanOverduePR2;
+go
+
+SELECT *
+FROM employee.Loans
+WHERE Loans.DueDate > Loans.ReturnedDate;
 go
 
 /* 7. What are the library peak hours for loans? */
