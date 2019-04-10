@@ -38,9 +38,7 @@ Lists the member, title, and loan information of a copy on loan that is overdue 
 < current date).
 
 ## Task 4 
-Create Stored Procedures and Triggers
-
-11. Generating Usage Reports – seven questions are listed at the end of this document to
+Create Stored Procedures and Triggers: Generating Usage Reports – seven questions are listed at the end of this document to
 generate summary information for librarians.
 
 1. How many loans did the library do last year?
