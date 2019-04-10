@@ -43,6 +43,14 @@ Create Stored Procedures and Triggers
 11. Generating Usage Reports – seven questions are listed at the end of this document to
 generate summary information for librarians.
 
+1. How many loans did the library do last year?
+2. What percentage of the membership borrowed at least one book?
+3. What was the greatest number of books borrowed by any one individual?
+4. What percentage of the books was loaned out at least once last year?
+5. What percentage of all loans eventually becomes overdue?
+6. What is the average length of a loan?
+7. What are the library peak hours for loans?
+
 ## Required before submission
 
 1. Insert Data into Tables
