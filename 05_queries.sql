@@ -97,8 +97,17 @@ go
  members 250, 341, 1675. Order the results by member_no. You should show information for these members,
  even if they have no books or reserve.  
  */
-
-
-
-/*11. Generating Usage Reports  seven questions are listed at the end of this document to 
-generate summary information for librarians. */
+ select 
+ Concat(M.FirstName, ISNULL(M.MiddleName, ' '), M.LastName) as 'Full Name', 
+ M.MemberID as 'member_no',
+ I.ISBN as 'ISBN',
+ R.RDate as 'log_date'
+from customer.Members as M
+inner join customer.Reservations as R
+on M.MemberID = R.MemberID 
+inner join material.Items as I
+on R.ItemID = I.ItemID
+where M.MemberID in (3, 18, 20)
+order by convert (int, M.MemberID) asc -- nchar to int for sorting
+;
+go
