@@ -44,6 +44,7 @@ create table employee.Loans   -- composite primary keys
 	TitleID nchar(8) not null, -- FK
 	MemberID nchar(8) not null, -- FK	
 	DueDate datetime not null,
+	ReturnedDate datetime not null,
 	OutDate datetime not null,
 	constraint pk_Loans primary key clustered([CopyID],[ItemID])
 )
