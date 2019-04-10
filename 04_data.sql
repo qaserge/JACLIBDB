@@ -108,7 +108,7 @@ go
 ,(17,'Aliquet Proin Velit Ltd','Cornwall','Ontario','L7P 6A9','(585) 356-6915')
 ,(18,'Odio A Purus LLP','Welland','Ontario','M6B 5A3','(235) 725-6659')
 ,(19,'Aliquet Libero Integer Associates','Kawartha Lakes','Ontario','K3K 3T1','(771) 714-5858')
-,(20,'Mauris Eu LLP','Québec City','Quebec','J6E 3M9','(620) 612-3380');
+,(20,'Mauris Eu LLP','Qu�bec City','Quebec','J6E 3M9','(620) 612-3380');
 go
 
    /************** NO.6 Table Titles **************************************/
@@ -140,7 +140,7 @@ go
     (1,1,1,'Azeri','277284667-9','http://dummyimage.com/205x203.bmp/ff4444/ffffff','false')
    ,(2,2,2,'Tetum','068412629-X','http://dummyimage.com/142x107.png/5fa2dd/ffffff','true')
    ,(3,3,3,'Hindi','380115460-2','http://dummyimage.com/202x233.jpg/cc0000/ffffff','false')
-   ,(4,4,4,'Māori','386948957-X','http://dummyimage.com/192x179.bmp/ff4444/ffffff','false')
+   ,(4,4,4,'M?ori','386948957-X','http://dummyimage.com/192x179.bmp/ff4444/ffffff','false')
    ,(5,5,5,'Luxembourgish','762287580-5','http://dummyimage.com/210x163.bmp/5fa2dd/ffffff','true')
    ,(6,6,6,'Kashmiri','093439269-2','http://dummyimage.com/196x114.bmp/cc0000/ffffff','true')
    ,(7,7,7,'Swati','717798318-X','http://dummyimage.com/240x245.jpg/cc0000/ffffff','false')
@@ -227,8 +227,9 @@ go
    ,(19,19,'2019-04-29 01:18:53','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.')
    ,(20,20,'2019-05-04 18:24:02',NULL);
    go
+
    /************** NO.11 Table LoanHistory **************************************/
-   INSERT INTO employee.LoanHistory(OutDate,ItemID,CopyID,TitleID,MemberID,DueDate,InTime,FineWaived,FinePaid,FineAssessed,Noted) VALUES
+ /*  INSERT INTO employee.LoanHistory(OutDate,ItemID,CopyID,TitleID,MemberID,DueDate,InTime,FineWaived,FinePaid,FineAssessed,Noted) VALUES
     ('',1,1,1,1,'2019-04-09 02:03:40',NULL,NULL,NULL,NULL,NULL)
    ,('',2,2,2,2,'2019-04-17 22:49:19',NULL,NULL,NULL,NULL,NULL)
    ,('2019-05-15 02:42:35',3,3,3,3,'2019-05-21 15:57:30','2019-04-29 14:54:28','$5.95','$7.37','$9.66','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.')
@@ -247,6 +248,23 @@ go
    ,('',16,16,16,16,'2019-04-06 17:15:57',NULL,NULL,NULL,NULL,NULL)
    ,('',17,17,17,17,'2019-05-15 23:43:11',NULL,NULL,NULL,NULL,NULL)
    ,('',18,18,18,18,'2019-05-11 16:58:10',NULL,NULL,NULL,NULL,NULL)
-   ,('',19,19,19,19,'2019-04-24 21:47:35',NULL,NULL,NULL,NULL,NULL)
+   ,('',19,19,19,19,'2019-04-24 21:47:35',NULL,NULL,NULL,NULL,NULL) 
+   ,('2019-04-20 03:25:16',20,20,20,20,'2019-04-27 00:58:45','2019-04-22 01:54:06','$1.67','$9.09','$8.19','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
+   go
+*/
+
+/************** NO.11 Table LoanHistory **************************************/
+INSERT INTO employee.LoanHistory(OutDate,ItemID,CopyID,TitleID,MemberID,DueDate,InTime,FineWaived,FinePaid,FineAssessed,Noted) VALUES
+	('2019-05-15 02:42:35',3,3,3,3,'2019-05-21 15:57:30','2019-04-29 14:54:28','$5.95','$7.37','$9.66','Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.')
+   ,('2019-04-08 12:31:41',4,4,4,4,'2019-05-15 01:14:12','2019-04-11 00:51:33','$5.05','$0.01','$7.40','Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.')
+   ,('2019-04-23 21:11:35',5,5,5,5,'2019-04-28 07:11:09','2019-04-19 05:46:44','$0.36','$5.91','$1.75','Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.')
+   ,('2019-04-18 02:34:24',6,6,6,6,'2019-04-24 02:02:26','2019-04-26 03:33:58','$4.08','$4.50','$7.74','Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.')
+   ,('2019-04-29 03:52:45',8,8,8,8,'2019-04-30 04:12:40','2019-05-11 07:33:44','$8.08','$2.39','$8.56','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.')
+   ,('2019-04-09 21:28:30',10,10,10,10,'2019-05-13 07:22:53','2019-04-17 05:56:20','$3.05','$9.69','$9.57','Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.')
+   ,('2019-05-15 21:18:21',11,11,11,11,'2019-04-24 01:20:27','2019-05-11 10:55:46','$5.05','$3.06','$2.56','In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.')
+   ,('2019-04-08 11:04:18',12,12,12,12,'2019-05-19 22:28:01','2019-04-29 18:25:52','$3.82','$0.02','$5.21','Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.')
+   ,('2019-04-15 08:05:39',13,13,13,13,'2019-05-06 02:56:39','2019-04-20 01:16:55','$6.85','$3.49','$0.92','Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.')
+   ,('2019-05-12 14:26:55',14,14,14,14,'2019-05-27 16:47:51','2019-04-26 17:17:21','$5.43','$2.87','$5.46','Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.')
+   ,('2019-04-10 10:12:05',15,15,15,15,'2019-04-16 13:58:46','2019-04-28 07:24:38','$4.62','$6.12','$9.95','Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.')
    ,('2019-04-20 03:25:16',20,20,20,20,'2019-04-27 00:58:45','2019-04-22 01:54:06','$1.67','$9.09','$8.19','Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.');
    go
