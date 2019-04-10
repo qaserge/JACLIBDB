@@ -25,3 +25,27 @@ end
 	end
 ;
 go
+
+/* TRIGGER FOR CREATE LOAN SETS COPY LOANED TO 1 */
+CREATE TRIGGER LoanCreatedTR
+ON employee.Loans
+AFTER INSERT
+AS
+	begin
+DECLARE @CopyID as int,
+				@ItemID as varchar(13),
+				@ReturnedDate as datetime
+
+		SELECT	@CopyID = CopyID,
+				@ItemID = ItemID,
+				@ReturnedDate = ReturnedDate
+		FROM Inserted
+if(@ReturnedDate is null)
+		begin
+			UPDATE Item.Copy
+SET Copy.isLoaned = 1
+WHERE Copy.CopyNo = @CopyID AND Copy.ISBN = @ItemID
+end
+	end
+;
+go
